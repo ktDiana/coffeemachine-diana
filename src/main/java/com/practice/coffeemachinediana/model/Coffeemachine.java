@@ -3,13 +3,13 @@ package com.practice.coffeemachinediana.model;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
+
 import java.util.List;
-import java.util.Set;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
 @Entity
-@Table(name = "coffee_machines")
+@Table(name = "coffeemachines")
 
 public class Coffeemachine {
 
@@ -24,12 +24,6 @@ public class Coffeemachine {
     // поэтому отдельная привязка заказов к конкретной кофемашине
     @OneToMany(mappedBy = "coffeemachine")
     private List<Order> orders;
-
-    @ManyToMany
-    @JoinTable(name = "coffee_machine_recipes",
-            joinColumns = @JoinColumn(name = "coffee_machine_id"),
-            inverseJoinColumns = @JoinColumn(name = "recipe_id"))
-    Set<Recipe> recipes;
 
     public int getId() {
         return id;
@@ -53,13 +47,5 @@ public class Coffeemachine {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
-    }
-
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public void setRecipes(Set<Recipe> recipes) {
-        this.recipes = recipes;
     }
 }

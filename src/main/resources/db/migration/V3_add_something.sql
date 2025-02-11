@@ -1,0 +1,1 @@
+ALTER TABLE orders ADD COLUMN coffeemachine_id INT REFERENCES coffeemachines(id) ON DELETE CASCADE;

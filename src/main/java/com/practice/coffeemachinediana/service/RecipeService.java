@@ -6,12 +6,14 @@ import com.practice.coffeemachinediana.model.Ingredient;
 import com.practice.coffeemachinediana.model.Recipe;
 import com.practice.coffeemachinediana.repository.IngredientRepository;
 import com.practice.coffeemachinediana.repository.RecipeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 
 public class RecipeService {
     private final RecipeRepository recipeRepository;

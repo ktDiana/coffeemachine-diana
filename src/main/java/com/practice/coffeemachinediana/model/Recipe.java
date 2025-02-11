@@ -26,7 +26,7 @@ public class Recipe {
     private List<Ingredient> ingredients;
 
     @Column
-    int count = 0;
+    Integer count = 0;
 
     public int getId() {
         return id;
@@ -52,12 +52,12 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(int orderCount) {
-        this.count = orderCount;
+    public void setCount(Integer count) {
+        this.count = count;
     }
 }
 
