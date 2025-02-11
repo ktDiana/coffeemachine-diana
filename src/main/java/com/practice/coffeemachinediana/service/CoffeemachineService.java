@@ -1,7 +1,7 @@
 package com.practice.coffeemachinediana.service;
 
+import com.practice.coffeemachinediana.dto.OrderDto;
 import com.practice.coffeemachinediana.model.Coffeemachine;
-import com.practice.coffeemachinediana.model.Order;
 import com.practice.coffeemachinediana.model.Recipe;
 import com.practice.coffeemachinediana.repository.CoffeemachineRepository;
 import com.practice.coffeemachinediana.repository.OrderRepository;
@@ -32,9 +32,9 @@ public class CoffeemachineService {
                 .orElseThrow(() -> new RuntimeException("Кофемашина не найдена"));
     }
 
-    public void registerOrder(Order order) {
-        Recipe recipe = order.getRecipe();
-        recipe.setOrderCount(recipe.getOrderCount() + 1);
+    public void registerOrder(OrderDto orderDto) {
+        Recipe recipe = orderDto.getRecipe();
+        recipe.setCount(recipe.getCount() + 1);
     }
 }
 

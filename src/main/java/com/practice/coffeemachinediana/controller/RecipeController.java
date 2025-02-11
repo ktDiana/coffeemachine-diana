@@ -24,7 +24,7 @@ public class RecipeController {
 
     // GET - ПОПУЛЯРНЫЙ РЕЦЕПТ
     @GetMapping("/popular")
-    public Recipe getPopularRecipe() {
+    public Recipe getMostPopularRecipe() {
         return recipeService.getMostPopularRecipe();
     }
 

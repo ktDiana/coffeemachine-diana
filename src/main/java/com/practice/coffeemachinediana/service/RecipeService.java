@@ -31,7 +31,7 @@ public class RecipeService {
     public Recipe addRecipe(RecipeDto recipeDto) {
         Recipe recipe = new Recipe();
         recipe.setName(recipeDto.getName());
-        recipe.setOrderCount(0);
+        recipe.setCount(0);
 
         // предположим, что мы обязательно указываем ингредиенты
         List<Ingredient> ingredients = new ArrayList<>();

@@ -25,8 +25,8 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<Ingredient> ingredients;
 
-    @Column(nullable = false)
-    int orderCount = 0;
+    @Column
+    int count = 0;
 
     public int getId() {
         return id;
@@ -52,12 +52,12 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public int getOrderCount() {
-        return orderCount;
+    public int getCount() {
+        return count;
     }
 
-    public void setOrderCount(int orderCount) {
-        this.orderCount = orderCount;
+    public void setCount(int orderCount) {
+        this.count = orderCount;
     }
 }
 
